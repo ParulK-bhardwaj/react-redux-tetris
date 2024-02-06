@@ -1,7 +1,7 @@
-import React from 'react'
-import { useSelector } from 'react-redux'
-import GridSquare from './GridSquare'
-import { shapes } from '../utils'
+import React from 'react';
+import { useSelector } from 'react-redux';
+import GridSquare from './GridSquare';
+import { shapes } from '../utils';
 
 export default function GridBoard(props) {
   const grid = useSelector(state => state.grid)
