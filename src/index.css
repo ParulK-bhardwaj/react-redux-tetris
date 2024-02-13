@@ -94,26 +94,34 @@
 
 /* Grid Square */
 .grid-square {
-  border-style: solid;
+  /* border-style: solid; */
   width: var(--tile-size);
   height: var(--tile-size);
-  border-width: var(--border-width);
+  /* border-width: var(--border-width);
   border-left-color: var(--border-left-color);
   border-top-color: var(--border-top-color);
   border-right-color: var(--border-right-color);
-  border-bottom-color: var(--border-bottom-color);
+  border-bottom-color: var(--border-bottom-color); */
+}
+/* Grid Square */
+.grid-square {
+  width: var(--tile-size);
+  height: var(--tile-size);
+  border-radius: 4px;
 }
 
 * {
   box-sizing: border-box;
 }
 
+/* Grid Board */
 .grid-board {
   display: grid;
   grid-template-columns: repeat(var(--cols), var(--tile-size));
   grid-gap: 0;
   align-self: flex-start;
-  grid-area: c; /* Assign to grid area c */
+  grid-area: c;
+  grid-gap: 1px; /* Add a gap! */
 }
 
 .next-block {
@@ -127,12 +135,12 @@
 .score-board-button {
   display: block;
   padding: 1em;
+  background-color: var(--color-0);
   border-width: 5px;
   border-top-color: var(--button-color-t);
   border-left-color: var(--button-color-l);
   border-right-color: var(--button-color-r);
   border-bottom-color: var(--button-color-b);
-  grid-area: r;
 }
 
 .controls {
@@ -144,15 +152,31 @@
 /* Control Button */
 .control-button {
   --size: calc(var(--tile-size) * 2.5);
-  width: var(--size);
+  width: var(--size) - 1;
   height: var(--size);
   text-align: center;
   display: block;
-  border-width: 5px;
+  background-color: #e1ecf1;
+  /* border: none; */
+  border-width: 2px;
+  padding: 5px;
+  margin-left: 5px;
   border-top-color: var(--button-color-t);
   border-left-color: var(--button-color-l);
   border-right-color: var(--button-color-r);
   border-bottom-color: var(--button-color-b);
+}
+
+/* score-board */
+.score-board {
+  grid-area: r;
+  display: flex;
+  flex-direction: column;
+}
+
+.score-board-button {
+  border: 3px solid var(--border-bottom-color);
+  margin-top: 5px;
 }
 
 /* Message Popup Styles */
