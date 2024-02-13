@@ -1,6 +1,13 @@
-# Getting Started with Create React App
+# Tetris - Introduction
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This tutorial uses React and Redux to recreate the classic arcade game Tetris.
+
+Tetris is a classic arcade game that was originally designed and programmed by Russian game designer [Alexey Pajitnov](https://en.wikipedia.org/wiki/Alexey_Pajitnov). It was released on June 6, 1984.
+
+The game, or one of its many variants, is available for nearly every video game console and computer operating system, as well as on devices such as graphing calculators, mobile phones, portable media players, PDAs, Network music players, and as an Easter egg on non-media products like oscilloscopes.
+
+<img width="494" alt="Screen Shot 2024-02-13 at 6 40 31 PM" src="https://github.com/ParulK-bhardwaj/react-redux-tetris/assets/111934039/e0f9f917-10e7-4a75-9d38-8cf9d41f4302">
+<img width="440" alt="Screen Shot 2024-02-13 at 6 39 56 PM" src="https://github.com/ParulK-bhardwaj/react-redux-tetris/assets/111934039/ed3b111e-3591-43ab-b480-540d9a0f4441">
 
 ## Available Scripts
 
