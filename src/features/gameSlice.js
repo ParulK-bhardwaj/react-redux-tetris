@@ -45,14 +45,12 @@ export const gameSlice = createSlice({
             // In this case we're done return state!
             return state
         }
-        // ==============EDIT BEGIN================
         // If not place the block
         const { newGrid, gameOver } = addBlockToGrid(shape, grid, x, y, rotation)
         if (gameOver) {
             state.gameOver = true
             return state
         }
-        // ==============EDIT END=================
   
         // reset some things to start a new shape/block
         state.x = 3
