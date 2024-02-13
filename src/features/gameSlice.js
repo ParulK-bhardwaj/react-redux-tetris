@@ -40,14 +40,20 @@ export const gameSlice = createSlice({
         const maybeY = y + 1
         // Check if the current block can move here
         if (canMoveTo(shape, grid, x, maybeY, rotation)) {
-                // If so move the block
-                state.y = maybeY
-      // In this case we're done return state!
-                return state
+            // If so move the block
+            state.y = maybeY
+            // In this case we're done return state!
+            return state
         }
+        // ==============EDIT BEGIN================
         // If not place the block
-        const newGrid = addBlockToGrid(shape, grid, x, y, rotation)
-
+        const { newGrid, gameOver } = addBlockToGrid(shape, grid, x, y, rotation)
+        if (gameOver) {
+            state.gameOver = true
+            return state
+        }
+        // ==============EDIT END=================
+  
         // reset some things to start a new shape/block
         state.x = 3
         state.y = -4
@@ -55,10 +61,9 @@ export const gameSlice = createSlice({
         state.grid = newGrid
         state.shape = nextShape
         state.nextShape = randomShape()
-  
-    // Check that the new block can be added 
+
         if (!canMoveTo(nextShape, newGrid, 0, 4, 0)) {
-            // If not Game Over
+            // Game Over
             console.log("Game Should be over...")
             state.shape = 0
             state.gameOver = true
@@ -69,7 +74,7 @@ export const gameSlice = createSlice({
         state.score += checkRows(newGrid)
         return state
     },
- 
+    
     rotate: (state) => {
         const { shape, grid, x, y, rotation } = state
         const newRotation = nextRotation(shape, rotation)
