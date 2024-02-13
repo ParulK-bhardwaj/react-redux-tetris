@@ -74,7 +74,7 @@ export const gameSlice = createSlice({
         state.score += checkRows(newGrid)
         return state
     },
-    
+
     rotate: (state) => {
         const { shape, grid, x, y, rotation } = state
         const newRotation = nextRotation(shape, rotation)
@@ -84,7 +84,7 @@ export const gameSlice = createSlice({
         return state
     },
     gameOver: () => {},
-    restart: () => {}
+    restart: () =>  defaultState()
   },
 })
 
